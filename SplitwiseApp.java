@@ -7,17 +7,41 @@ public class SplitwiseApp
         System.out.println("=== SplitWise ===");
         System.out.println("Track shared expenses with friends.");
         System.out.println();
-        System.out.println("Ready. More features coming in the next lessons");
+        System.out.println("Ready. More features coming in the next lessons.");
         Scanner input = new Scanner(System.in);
-        System.out.println("Who paid?");
-        String payerName = input.nextLine();
-        System.out.println("Total amount?");
-        double totalAmount = input.nextDouble();
-        int numFriends = 3;
-        double perPersonShare = totalAmount/numFriends;
-        String expenseLine ="%S paid %.2f".formatted(payerName,totalAmount);
-        String shareLine = "Each person pays: %.2f".formatted(perPersonShare);
-        System.out.println(expenseLine);
-        System.out.println(shareLine);
+        boolean running = true;
+        while (running)
+        {
+            System.out.println("=== Menu ===");
+            System.out.println("1. Record Expense");
+            System.out.println("0. Quit");
+            System.out.print("Choice: ");
+            int choice = input.nextInt();
+            input.nextLine();
+            switch (choice)
+            {
+                case 1 ->
+                {
+                    System.out.print("Who paid? ");
+                    String payerName = input.nextLine();
+                    System.out.print("Total Amount ? ");
+                    double totalAmount = input.nextDouble();
+                    input.nextLine();
+                    int numFriends = 3;
+                    double perPersonShare = totalAmount / numFriends;
+                    String expenseLine = "%s paid %.2f".formatted(payerName, totalAmount);
+                    String shareLine = "Each person pays: %.2f".formatted(perPersonShare);
+                    System.out.println(expenseLine);
+                    System.out.println(shareLine);
+                }
+                case 0 ->
+                {
+                    System.out.println("Goodbye!");
+                    running = false;
+                }
+                default ->
+                System.out.println("Invalid Choice!");
+            }
+        }
     }
 }
