@@ -1,18 +1,22 @@
 package SplitWise;
+import java.util.Scanner;
 public class SplitwiseApp
 {
     public static void main(String[] args)
     {
         System.out.println("=== SplitWise ===");
-        String payerName = "Riya";
-        double totalAmount = 500.0;
-        int numFriends = 3;
-        double perPersonShare = totalAmount/numFriends;
-        String expenseLine = payerName + " paid " + totalAmount;
-        String shareLine = "Each person pays: " + perPersonShare;
         System.out.println("Track shared expenses with friends.");
         System.out.println();
         System.out.println("Ready. More features coming in the next lessons");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Who paid?");
+        String payerName = input.nextLine();
+        System.out.println("Total amount?");
+        double totalAmount = input.nextDouble();
+        int numFriends = 3;
+        double perPersonShare = totalAmount/numFriends;
+        String expenseLine ="%S paid %.2f".formatted(payerName,totalAmount);
+        String shareLine = "Each person pays: %.2f".formatted(perPersonShare);
         System.out.println(expenseLine);
         System.out.println(shareLine);
     }
