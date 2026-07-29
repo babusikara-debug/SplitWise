@@ -44,13 +44,8 @@ public class SplitwiseApp
                         System.out.println(shareLine);
                     }
                 }
-                case 2->
-                {
-                    System.out.println("Friend name:");
-                    String friendName = input.nextLine();
-                    friends.add(friendName);
-                    System.out.println("Added " + friendName + ".");
-                }
+                case 2-> SplitwiseApp.addfriend(input,friends);
+
                 case 3->
                 {
                     if(friends.isEmpty())
@@ -75,5 +70,11 @@ public class SplitwiseApp
                         System.out.println("Invalid Choice!");
             }
         }
+    }
+    public static void addfriend(Scanner input,ArrayList<String> friends){
+        System.out.println("Friend name:");
+        String friendName = input.nextLine();
+        friends.add(friendName);
+        System.out.println("Added " + friendName + ".");
     }
 }
