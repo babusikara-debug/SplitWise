@@ -10,7 +10,7 @@ public class SplitwiseApp
         System.out.println();
         System.out.println("Ready. More features coming in the next lessons.");
         Scanner input = new Scanner(System.in);
-        ArrayList<String> friends = new ArrayList<>();
+        ArrayList<Friends> friends = new ArrayList<>();
         boolean running = true;
         while (running)
         {
@@ -56,9 +56,9 @@ public class SplitwiseApp
                     {
                         System.out.println("Friends:");
                     }
-                    for (String name : friends)
+                    for (Friends name : friends)
                     {
-                        System.out.println("   " + name );
+                        System.out.println("   " + name.getName() );
                     }
                 }
                 case 0 ->
@@ -71,10 +71,10 @@ public class SplitwiseApp
             }
         }
     }
-    public static void addfriend(Scanner input,ArrayList<String> friends){
+    public static void addfriend(Scanner input,ArrayList<Friends> friends){
         System.out.println("Friend name:");
         String friendName = input.nextLine();
-        friends.add(friendName);
+        friends.add(new Friends(friendName));
         System.out.println("Added " + friendName + ".");
     }
 }
