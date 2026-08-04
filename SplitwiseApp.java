@@ -37,8 +37,9 @@ public class SplitwiseApp
                         double totalAmount = input.nextDouble();
                         input.nextLine();
                         int numFriends = friends.size();
-                        double perPersonShare = totalAmount / numFriends;
-                        String expenseLine = "%s paid %.2f".formatted(payerName, totalAmount);
+                        Expense obj=new Expense(payerName,totalAmount);
+                        double perPersonShare = obj.getAmount() / numFriends;
+                        String expenseLine = "%s paid %.2f".formatted(obj.getPayerName(),obj.getAmount());
                         String shareLine = "Each person pays: %.2f".formatted(perPersonShare);
                         System.out.println(expenseLine);
                         System.out.println(shareLine);
