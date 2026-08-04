@@ -1,8 +1,8 @@
-package SplitWise;
+package SplitWise.model;
 
-record ExpenseLine(String payerName, double amount) {
+public record ExpenseLine(String payerName, double amount) {
 
-    ExpenseLine{//compact const to reject negative amount
+    public ExpenseLine{//compact const to reject negative amount
         if(amount<0)
             amount=0;
     }

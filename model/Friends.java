@@ -1,4 +1,4 @@
-package SplitWise;
+package SplitWise.model;
 
 public class Friends {
     private static int lastId = 0;
