@@ -55,11 +55,11 @@ public class SplitwiseApp
                     }
                     else
                     {
-                        System.out.println("Friends:");
+                        System.out.println("Friends(id):");
                     }
                     for (Friends name : friends)
                     {
-                        System.out.println("   " + name.getName() );
+                        System.out.println(name.getName() +"-"+name.getId());
                     }
                 }
                 case 0 ->
