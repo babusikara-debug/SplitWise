@@ -62,7 +62,7 @@ public class SplitwiseApp
                     }
                     for (Friends name : friends)
                     {
-                        System.out.println(name.getName() +"-"+name.getId());
+                        System.out.println(SplitwiseApp.FriendDisplay.listLine(name));//same as FriendDisplay.listLine(name)
                     }
                 }
                 case 0 ->
@@ -78,7 +78,17 @@ public class SplitwiseApp
     public static void addfriend(Scanner input,ArrayList<Friends> friends){
         System.out.println("Friend name:");
         String friendName = input.nextLine();
-        friends.add(new Friends(friendName));
-        System.out.println("Added " + friendName + ".");
+        Friends f=new Friends(friendName);
+        friends.add(f);
+        System.out.println(FriendDisplay.addedMessage(f));
     }
+    private static class FriendDisplay {//fr.
+        static String listLine(Friends friend) {
+            return "- %d: %s".formatted(friend.getId(), friend.getName());
+        }
+        static String addedMessage(Friends friend) {
+            return "Added %s (id %d).".formatted(friend.getName(), friend.getId());
+        }
+    }
+
 }
