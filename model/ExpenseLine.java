@@ -1,3 +1,9 @@
+/**
+ * Represents one expense row containing the payer and the amount.
+ *
+ * @param payerName the name of the friend who paid
+ * @param amount the amount paid
+ */
 package SplitWise.model;
 
 public record ExpenseLine(String payerName, double amount) {

@@ -1,11 +1,18 @@
 package SplitWise.app;
 import SplitWise.model.ExpenseLine;
 import SplitWise.model.Friends;
-
+/**
+ * Splitwise console application.
+ */
 import java.util.ArrayList;
 import java.util.Scanner;
 public class SplitwiseApp
 {
+    /**
+     * Starts the Splitwise console application.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args)
     {
         System.out.println("=== SplitWise ===");
